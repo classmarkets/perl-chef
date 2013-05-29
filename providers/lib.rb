@@ -36,7 +36,7 @@ action :create do
     e = execute "Create perlbrew lib #{new_resource.name}" do
       environment ({
         'PERLBREW_ROOT' => node['perlbrew']['perlbrew_root'],
-        'PERLBREW_HOME' => node['perlbrew']['perlbrew_root']
+        'PERLBREW_HOME' => node['perlbrew']['perlbrew_home']
       })
       command "#{node['perlbrew']['perlbrew_root']}/bin/perlbrew lib create #{new_resource.name}"
       action :nothing
@@ -53,7 +53,7 @@ action :delete do
     e = execute "Remove perlbrew #{new_resource.name}" do
       environment ({
         'PERLBREW_ROOT' => node['perlbrew']['perlbrew_root'],
-        'PERLBREW_HOME' => node['perlbrew']['perlbrew_root']
+        'PERLBREW_HOME' => node['perlbrew']['perlbrew_home']
       })
       command "#{node['perlbrew']['perlbrew_root']}/bin/perlbrew lib delete #{new_resource.name}"
       action :nothing

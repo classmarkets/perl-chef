@@ -25,7 +25,7 @@ include Chef::Mixin::ShellOut
 action :install do
   perlbrew_env = {
     'PERLBREW_ROOT' => node['perlbrew']['perlbrew_root'],
-    'PERLBREW_HOME' => node['perlbrew']['perlbrew_root']
+    'PERLBREW_HOME' => node['perlbrew']['perlbrew_home']
   }
   options = new_resource.options ? new_resource.options : node['perlbrew']['cpanm_options']
   new_resource.modules([new_resource.name]) unless new_resource.modules.length > 0

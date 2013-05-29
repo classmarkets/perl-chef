@@ -26,7 +26,7 @@ include Chef::Mixin::ShellOut
 action :run do
   perlbrew_env = {
     'PERLBREW_ROOT' => node['perlbrew']['perlbrew_root'],
-    'PERLBREW_HOME' => node['perlbrew']['perlbrew_root']
+    'PERLBREW_HOME' => node['perlbrew']['perlbrew_home']
   }
   b = bash new_resource.name do
     environment new_resource.environment.merge(perlbrew_env)
